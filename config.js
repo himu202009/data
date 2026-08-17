@@ -23,7 +23,7 @@ const SITE_CONFIG = {
   pageTitle: "Student Profiles",
 
   // Big heading at the top of the page
-  heroHeading: "Made by himu",
+  heroHeading: "Student Profiles",
 
   // The search box's placeholder text (shown before typing)
   searchPlaceholder: "Search by Name, ID, Institution, Phone, Batch...",
