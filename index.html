@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <title>Student Directory</title>
+    <meta name="theme-color" content="#0d9488">
+    <title>Student Profiles</title>
 
-    <!-- Speed up the fallback-avatar requests -->
-    <link rel="preconnect" href="https://ui-avatars.com">
-    <link rel="dns-prefetch" href="https://ui-avatars.com">
+    <!-- Preconnect + font: a single font family keeps the page fast -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Preload the data file so it starts downloading immediately -->
+    <link rel="preload" href="students.json" as="fetch" type="application/json" crossorigin>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="top-bar">
-        <h1>Student Profiles</h1>
+        <h1 id="page-heading">Student Profiles</h1>
         <button
             id="theme-toggle"
             class="theme-toggle"
@@ -30,13 +35,19 @@
 
     <!-- Universal Search Box -->
     <div class="search-container">
-        <input
-            type="search"
-            id="search-input"
-            placeholder="Search by Name, ID, Institution, Phone, Batch..."
-            aria-label="Search students"
-            autocomplete="off"
-        >
+        <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search by Name, ID, Institution, Phone, Batch..."
+                aria-label="Search students"
+                autocomplete="off"
+            >
+        </div>
         <p id="results-count" class="results-count" aria-live="polite"></p>
     </div>
 
@@ -53,11 +64,13 @@
     <!-- Modal Popup Details -->
     <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()" role="button" tabindex="0" aria-label="Close">&times;</span>
+            <span class="close-btn" id="modal-close-btn" role="button" tabindex="0" aria-label="Close">&times;</span>
             <div id="modal-body"></div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- ✏️ config.js holds every piece of editable text — see that file first -->
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
