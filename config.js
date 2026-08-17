@@ -20,7 +20,7 @@
 const SITE_CONFIG = {
 
   // Browser tab title (shown at the top of the browser tab)
-  pageTitle: "amar sonar bangla",
+  pageTitle: "Student Profiles",
 
   // Big heading at the top of the page
   heroHeading: "Student Profiles",
