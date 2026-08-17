@@ -23,7 +23,7 @@ const SITE_CONFIG = {
   pageTitle: "Student Profiles",
 
   // Big heading at the top of the page
-  heroHeading: "Made by mehrabhossainhimu",
+  heroHeading: "Student Profiles",
 
   // The search box's placeholder text (shown before typing)
   searchPlaceholder: "Search by Name, ID, Institution, Phone, Batch...",
@@ -47,10 +47,10 @@ const SITE_CONFIG = {
   labels: {
     id: "ID",
     email: "Email",
-    phone: "Phone No.",
+    phone: "Phone",
     institution: "Institution",
     hscBatch: "HSC Batch",
-    transactionId: "Access Code",
+    transactionId: "Transaction ID",
   },
 
   // Shown when a field has no value
