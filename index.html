@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Student Directory</title>
+
+    <!-- Speed up the fallback-avatar requests -->
+    <link rel="preconnect" href="https://ui-avatars.com">
+    <link rel="dns-prefetch" href="https://ui-avatars.com">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <h1>Student Profiles</h1>
+        <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+            title="Toggle dark / light mode"
+        >
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+    </header>
+
+    <!-- Universal Search Box -->
+    <div class="search-container">
+        <input
+            type="search"
+            id="search-input"
+            placeholder="Search by Name, ID, Institution, Phone, Batch..."
+            aria-label="Search students"
+            autocomplete="off"
+        >
+        <p id="results-count" class="results-count" aria-live="polite"></p>
+    </div>
+
+    <!-- Student Cards Grid -->
+    <main>
+        <div id="student-grid" class="grid-container" aria-live="polite">
+            <p class="status-message">Loading students…</p>
+        </div>
+
+        <!-- Dynamic Pagination Container -->
+        <nav id="pagination" class="pagination-container" aria-label="Pagination"></nav>
+    </main>
+
+    <!-- Modal Popup Details -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()" role="button" tabindex="0" aria-label="Close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
