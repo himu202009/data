@@ -50,7 +50,7 @@ const SITE_CONFIG = {
     phone: "Phone",
     institution: "Institution",
     hscBatch: "HSC Batch",
-    transactionId: "Transaction ID",
+    transactionId: "Access Code",
   },
 
   // Shown when a field has no value
