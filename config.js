@@ -25,7 +25,7 @@ const SITE_CONFIG = {
   // anyone who knows this password can view the student list.
   // ============================================================
   auth: {
-    password: "22122",
+    password: "009",
 
     // Text shown on the login page (login.html)
     heading: "Welcome back",
