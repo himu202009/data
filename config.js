@@ -19,6 +19,23 @@
 
 const SITE_CONFIG = {
 
+  // ============================================================
+  // 🔒 LOGIN PASSWORD — change this to change the site password.
+  // This is a simple static password, not a real account system:
+  // anyone who knows this password can view the student list.
+  // ============================================================
+  auth: {
+    password: "1234",
+
+    // Text shown on the login page (login.html)
+    heading: "Welcome back",
+    subtitle: "Enter the access password to view student profiles.",
+    passwordPlaceholder: "Password",
+    submitLabel: "Unlock profiles",
+    wrongPasswordText: "Incorrect password. Please try again.",
+    rememberMeLabel: "Keep me signed in on this device",
+  },
+
   // Browser tab title (shown at the top of the browser tab)
   pageTitle: "Student Profiles",
 
@@ -67,4 +84,7 @@ const SITE_CONFIG = {
 
   // Close button in the popup
   closeButtonAriaLabel: "Close",
+
+  // Logout button (top bar)
+  logoutButtonAriaLabel: "Log out",
 };

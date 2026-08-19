@@ -7,6 +7,19 @@
     <meta name="theme-color" content="#0d9488">
     <title>Student Profiles</title>
 
+    <!-- Auth guard: runs before paint. Sends anyone who hasn't logged
+         in on login.html back there. Login itself is handled by
+         login.html / login.js, with the password set in config.js. -->
+    <script>
+        (function () {
+            try {
+                var authed = sessionStorage.getItem('sp_authenticated') === 'true' ||
+                             localStorage.getItem('sp_authenticated') === 'true';
+                if (!authed) { window.location.replace('login.html'); }
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Preconnect + font: a single font family keeps the page fast -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +34,15 @@
 
     <header class="top-bar">
         <h1 id="page-heading">Student Profiles</h1>
+        <button
+            id="logout-btn"
+            class="theme-toggle logout-btn"
+            type="button"
+            aria-label="Log out"
+            title="Log out"
+        >
+            <span aria-hidden="true">⏻</span>
+        </button>
         <button
             id="theme-toggle"
             class="theme-toggle"
@@ -72,5 +94,14 @@
     <!-- ✏️ config.js holds every piece of editable text — see that file first -->
     <script src="config.js" defer></script>
     <script src="script.js" defer></script>
+    <script>
+        document.getElementById('logout-btn').addEventListener('click', function () {
+            try {
+                sessionStorage.removeItem('sp_authenticated');
+                localStorage.removeItem('sp_authenticated');
+            } catch (e) {}
+            window.location.href = 'login.html';
+        });
+    </script>
 </body>
 </html>
